@@ -1,5 +1,3 @@
-// Created on Wed April 1 2015
-
 // Functions for Martha
 #ifndef _HEADER_H_
 #define _HEADER_H_
