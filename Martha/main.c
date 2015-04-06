@@ -9,7 +9,7 @@ int main() {
 	
 	msleep(10000); //wait for Jupakoo to push poms in place
 	
-	while(get_object_count(greenVal) == 0 $$ get_object_count(redVal) == 0) {
+	while(get_object_count(greenVal) == 0 && get_object_count(redVal) == 0) {
 		printf("Looking for poms... \n");
 		mav(leftWheel, 500); 
 		mav(rightWheel, 500); 
