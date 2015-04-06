@@ -14,7 +14,7 @@
 #define topHatPort 2  // analog
 #define touchPort 15  // analog
 
-#define pinkVal 0
+#define greenVal 0
 #define redVal 1
 
 extern int poms;
