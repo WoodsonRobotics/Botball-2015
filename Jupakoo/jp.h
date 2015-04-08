@@ -12,8 +12,11 @@
 #define topHatPort 2  // analog
 #define touchPort 15  // analog
 
-#define LEFT -1
-#define RIGHT 1
+// Directions
+#define L 0
+#define R 1
+#define F 2
+#define B 3
 
 void setup();
 void move(int direction, int speed, float seconds);
