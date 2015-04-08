@@ -16,16 +16,16 @@ void move(int speed, float seconds) {
 }
 
 void scan() { // look through pile of poms to grab() the four we need
-	printf("Looking for the poms I want..");
+	printf("Looking for the poms I want..\n");
 }
 
 void grab() { // once pom is positioned corrrectly, grab and put in bucket
-	printf("This one looks nice");
+	printf("This one looks nice\n");
 	
 	
 	poms++;
 }
 
 void dump() { // to drop poms in startzone
-	printf("Goodbye poms.");
+	printf("Goodbye poms.\n");
 }
