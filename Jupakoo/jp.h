@@ -1,6 +1,6 @@
 // Functions for Jupakoo
-#ifndef _HEADER_H_
-#define _HEADER_H_
+#ifndef _JP_H_
+#define _JP_H_
 
 #define leftWheel 3   	// motor
 #define rightWheel 2  	// motor
