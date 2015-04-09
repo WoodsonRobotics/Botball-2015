@@ -2,10 +2,12 @@
 #include "jp.h"
 
 int main () {
+	create_connect();
 	setup();
-	move(F,10,1);
-	move(B,10,1);
-	move(L,10,1);
-	move(R,10,1);
+	move(F,100,1);
+	move(B,100,1);
+	move(L,100,1);
+	move(R,100,1);
+	create_disconnect();
 	return 0;
 }

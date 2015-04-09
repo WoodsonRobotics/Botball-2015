@@ -1,6 +1,6 @@
 #include "jp.h"
 
-void setup() {	
+void setup() {
 	wait_for_light(lightPort);
 	beep();
 
@@ -8,32 +8,30 @@ void setup() {
 }
 
 void move(int direction, int speed, float seconds) {
-	int lsp = 0; // left speed
-	int rsp = 0; // right speed
+	int lsp = 0; // left speed in mm/sec
+	int rsp = 0; // right speed in mm/sec
 	switch(direction) {
 		case L:
 			rsp = speed;
-			lsp = speed;
+			lsp = -1*speed;
 			break;
 		case R:
 			lsp = -1*speed;
-			rsp = -1*speed;
+			rsp = speed;
 			break;
 		case F:
-			lsp = -1*speed;
+			lsp = speed;
 			rsp = speed;
 			break;
 		case B:
-			lsp = speed;
+			lsp = -1*speed;
 			rsp = -1*speed; 
 		default:
 			
 			break;
 	}
-	mav(leftWheel, lsp);
-	mav(rightWheel, rsp);
+	create_drive_direct(lsp,rsp);
 	msleep(seconds * 1000);
-	mav(leftWheel, 0);
-	mav(rightWheel, 0);
+	create_stop();
 }
 
