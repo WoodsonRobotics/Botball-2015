@@ -12,20 +12,20 @@ void move(int direction, int speed, float seconds) {
 	int rsp = 0; // right speed in mm/sec
 	switch(direction) {
 		case L:
-			rsp = speed;
 			lsp = -1*speed;
+			rsp = speed;
 			break;
 		case R:
-			lsp = -1*speed;
-			rsp = speed;
+			lsp = speed;
+			rsp = -1*speed;
 			break;
 		case F:
-			lsp = speed;
-			rsp = speed;
+			lsp = -1*speed;
+			rsp = -1*speed;
 			break;
 		case B:
-			lsp = -1*speed;
-			rsp = -1*speed; 
+			lsp = speed;
+			rsp = speed; 
 		default:
 			
 			break;
