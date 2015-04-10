@@ -11,7 +11,7 @@ void setup() {
 	shut_down_in(118);		
 }
 
-struct coords direct(int direction, int speed)[2] {
+struct coords direct(int direction, int speed) {
 	int lsp = 0; // left speed in mm/sec
 	int rsp = 0; // right speed in mm/sec
 
@@ -56,10 +56,25 @@ void mv(int speed, int distance) {
 	//distance is mm
 	//speed in mm/s
 	set_create_distance(0);
-	creat_drive_direct(speed, speed);
-	int dist = 0;
-	while(dist < distance) {
+	create_drive_direct(speed, speed);
+	int dist;
+	do {
 		dist = get_create_distance();
-	}
+	} while(dist < distance);
 	create_stop();
+}
+
+void turn(int speed, int angle) {
+	set_create_total_angle(0);
+	int ag;
+	if(angle < 0) {
+		do {
+			create_drive_direct(speed,-speed);
+			ag = get_create_total_angle();
+		} while (ag > angle);
+	} else {
+		do {
+			ag = get_create_total_angle();
+		} while(ag < angle);
+	}
 }

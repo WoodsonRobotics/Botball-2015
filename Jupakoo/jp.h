@@ -20,7 +20,9 @@
 
 void setup();
 void move(int direction, int speed, float seconds);
+struct coords direct(int direction, int speed);
 void mv(int speed, int distance);
+void turn(int speed, int angle);
 
 
 #endif
