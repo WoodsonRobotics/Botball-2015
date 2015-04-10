@@ -37,13 +37,12 @@ void move(int direction, int speed, float seconds) {
 
 void movef(int speed, int distance) {
 	//distance is mm
-	//speed in 
-	int time = 1/(1/speed);
-	
+	//speed in mm/s
+	set_create_distance(0);
 	creat_drive_direct(speed, speed);
-	msleep(time);
+	int dist = 0;
+	while(dist < distance) {
+		dist = get_create_distance();
+	}
 	create_stop();
-	
-	
-	
 }
