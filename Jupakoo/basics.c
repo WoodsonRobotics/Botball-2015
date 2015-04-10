@@ -35,3 +35,15 @@ void move(int direction, int speed, float seconds) {
 	create_stop();
 }
 
+void movef(int speed, int distance) {
+	//distance is mm
+	//speed in 
+	int time = 1/(1/speed);
+	
+	creat_drive_direct(speed, speed);
+	msleep(time);
+	create_stop();
+	
+	
+	
+}

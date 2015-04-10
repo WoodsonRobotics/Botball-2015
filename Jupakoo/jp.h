@@ -20,6 +20,7 @@
 
 void setup();
 void move(int direction, int speed, float seconds);
+void movef(int speed, int distance);
 
 
 #endif
