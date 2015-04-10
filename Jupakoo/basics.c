@@ -56,7 +56,7 @@ void mv(int speed, int distance) {
 	//distance is mm
 	//speed in mm/s
 	set_create_distance(0);
-	create_drive_direct(speed, speed);
+	create_drive_direct(-1*speed, -1*speed);
 	int dist;
 	do {
 		dist = get_create_distance();
@@ -69,11 +69,12 @@ void turn(int speed, int angle) {
 	int ag;
 	if(angle < 0) {
 		do {
-			create_drive_direct(speed,-speed);
+			create_drive_direct(speed,-1*speed);
 			ag = get_create_total_angle();
 		} while (ag > angle);
 	} else {
 		do {
+			create_drive_direct(-1*speed,speed);
 			ag = get_create_total_angle();
 		} while(ag < angle);
 	}

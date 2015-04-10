@@ -11,6 +11,7 @@ int main () {
 	turn(100,90);
 	
 	create_disconnect();
+	printf("Shutting Down...\n");
 	return 0;
 }
  
