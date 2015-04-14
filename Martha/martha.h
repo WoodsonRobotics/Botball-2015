@@ -16,6 +16,9 @@
 #define greenVal 0
 #define redVal 1
 
+//set_servo_position()
+#define ssp(port,position) set_servo_position(port,position) 
+
 extern int poms;
 void setup();
 void move(int speed, float seconds);
