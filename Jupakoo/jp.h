@@ -25,10 +25,16 @@
 #define ssp(port,position) set_servo_position(port,position) 
 
 void setup();
-void move(int direction, int speed, float seconds);
+void oldmove(int direction, int speed, float seconds);
 struct coords direct(int direction, int speed);
 void mv(int speed, int distance);
-void turn(int speed, int angle);
+void oldturn(int speed, int angle);
 
+//Speed is in mm/sec on interval [-500,500], distance is in mm;
+void move(int speed, int distance);
+
+//Speed is in mm/s on interval [-500,500]
+//Angle is positive angle is counterclockwise
+void turn(int speed, int angle);
 
 #endif

@@ -41,7 +41,7 @@ struct coords direct(int direction, int speed) {
 	dir.r = rsp;
 	return dir;
 }
-void move(int direction, int speed, float seconds) {
+void oldmove(int direction, int speed, float seconds) {
 	int lsp;
 	int rsp;
 	struct coords dir;
@@ -66,7 +66,7 @@ void mv(int speed, int distance) {
 	create_stop();
 }
 
-void turn(int speed, int angle) {
+void oldturn(int speed, int angle) {
 	set_create_total_angle(0);
 	int ag;
 	if(angle < 0) {
