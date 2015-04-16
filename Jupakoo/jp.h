@@ -18,6 +18,9 @@
 #define F 2
 #define B 3
 
+#define openClaw 600
+#define closeClaw 1400
+
 void setup();
 void move(int direction, int speed, float seconds);
 struct coords direct(int direction, int speed);
