@@ -5,12 +5,6 @@ struct coords {
 	int l;
 	int r;
 };
-void setup() {
-	wait_for_light(lightPort);
-	beep();
-
-	shut_down_in(118);		
-}
 
 struct coords direct(int direction, int speed) {
 	int lsp = 0; // left speed in mm/sec
