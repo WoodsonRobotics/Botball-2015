@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "jp.h"
 
 struct coords {
@@ -60,6 +61,7 @@ void mv(int speed, int distance) {
 	int dist;
 	do {
 		dist = get_create_distance();
+		printf("Distance: %d\n",dist);
 	} while(dist < distance);
 	create_stop();
 }
@@ -71,11 +73,13 @@ void turn(int speed, int angle) {
 		do {
 			create_drive_direct(speed,-1*speed);
 			ag = get_create_total_angle();
+			printf("Angle: %d\n",ag);
 		} while (ag > angle);
 	} else {
 		do {
 			create_drive_direct(-1*speed,speed);
 			ag = get_create_total_angle();
+			printf("Angle: %d\n",ag);
 		} while(ag < angle);
 	}
 }
