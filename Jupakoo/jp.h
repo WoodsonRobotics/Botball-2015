@@ -21,6 +21,9 @@
 #define openClaw 600
 #define closeClaw 1400
 
+//set_servo_position()
+#define ssp(port,position) set_servo_position(port,position) 
+
 void setup();
 void move(int direction, int speed, float seconds);
 struct coords direct(int direction, int speed);
