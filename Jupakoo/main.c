@@ -10,12 +10,14 @@ void setup()
 
 int main()
 {
-	printf("Noice\n");
 	setup();
 	printf("Battery: %d\n",get_create_battery_capacity());
 	
-	move(100,100);
-
+//	move(100,100);
+	
+	
+	turn(100,90);
+	
 	create_disconnect();
 	printf("Bai bai\n");
 	return 0;
