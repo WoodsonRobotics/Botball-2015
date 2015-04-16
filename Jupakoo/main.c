@@ -4,7 +4,9 @@
 
 
 int main () {
+	printf("Noice\n");
 	create_connect();
+	printf("Battery: %d\n",get_create_battery_capacity());
 	//setup();
 	
 	mv(100,1000);
