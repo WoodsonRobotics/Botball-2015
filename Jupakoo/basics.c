@@ -71,12 +71,14 @@ void turn(int speed, int angle) {
 	int ag;
 	if(angle < 0) {
 		do {
+			// Right Turn
 			create_drive_direct(speed,-1*speed);
 			ag = get_create_total_angle();
 			printf("Angle: %d\n",ag);
 		} while (ag > angle);
 	} else {
 		do {
+			// Left Turn
 			create_drive_direct(-1*speed,speed);
 			ag = get_create_total_angle();
 			printf("Angle: %d\n",ag);
