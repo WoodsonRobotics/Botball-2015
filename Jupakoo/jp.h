@@ -25,10 +25,6 @@
 #define ssp(port,position) set_servo_position(port,position) 
 
 void setup();
-void oldmove(int direction, int speed, float seconds);
-struct coords direct(int direction, int speed);
-void mv(int speed, int distance);
-void oldturn(int speed, int angle);
 
 //Speed is in mm/sec on interval [-500,500], distance is in mm;
 void move(int speed, int distance);
