@@ -20,13 +20,17 @@ void turn(int speed, int angle)
 	set_create_total_angle(0);
 	if(angle<0){
 		create_spin_CW(speed);
+		
 		while(get_create_total_angle() > angle)
 			printf("%d degrees turned\n", get_create_total_angle());
+		
 		create_stop();
 	}else{
 		create_spin_CCW(speed);
+		
 		while(get_create_total_angle() < angle)
 			printf("%d degrees turned\n", get_create_total_angle());
+		
 		create_stop();
 	}
 }
