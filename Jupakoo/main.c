@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "jp.h"
 
 void setup()
@@ -10,14 +9,12 @@ void setup()
 
 int main()
 {
+	printf("Nooice\n");
 	setup();
 	printf("Battery: %d\n",get_create_battery_capacity());
 	
-//	move(100,100);
-	
-	
-	turn(100,90);
-	
+	move(100,100);
+
 	create_disconnect();
 	printf("Bai bai\n");
 	return 0;
