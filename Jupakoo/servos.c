@@ -5,9 +5,11 @@ void setArmPosition(int pos)
 	int a = get_servo_position(ARM_A);
 	printf("Servos a,b: %d, %d\n", get_servo_position(ARM_A),get_servo_position(ARM_B));
 	
-    if(a < pos){
+    if(a < pos)
+	{
 		printf("loop a+\n");
-		while(a < pos){
+		while(a < pos)
+		{
 			a+=1;
 			ssp(ARM_A,a);
 			ssp(ARM_B,2047-a);
@@ -15,9 +17,12 @@ void setArmPosition(int pos)
 			printf("Servos a,b: %d, %d\n", get_servo_position(ARM_A),get_servo_position(ARM_B));
 			msleep(1); //speed controll
 		}
-	} else {
+	} 
+	else 
+	{
 		printf("loop a-\n");
-		while(a > pos){
+		while(a > pos)
+		{
 				a-=1;
 				ssp(ARM_A,a);
 				ssp(ARM_B,2047-a);
@@ -50,10 +55,10 @@ void armDown()
 
 void clawOpen() 
 {
-	
+	ssp(CLAW,OPEN);
 }
 
 void clawClose()
 {
-	
+	ssp(CLAW,CLOSE);
 }
