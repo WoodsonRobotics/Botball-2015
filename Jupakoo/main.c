@@ -17,7 +17,7 @@ int main()
 	
 	
 	turn(100,90);
-	
+	msleep(10);
 	create_disconnect();
 	printf("Bai bai\n");
 	return 0;
