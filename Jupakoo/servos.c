@@ -8,8 +8,10 @@ void setArmPosition(int pos)
 	//ssp(ARM_B, b);
 	
 	printf("Servos starting at a,b: %d, %d\n", a, b);
-    if(a < pos){
-		while(a < pos){
+    if(a < pos)
+	{
+		while(a < pos)
+		{
 			ssp(ARM_A,a++);
 			ssp(ARM_B,2047-a);
 			a = get_servo_position(ARM_A);
@@ -17,8 +19,11 @@ void setArmPosition(int pos)
 			printf("Servos a,b: %d, %d\n", a, b);
 			msleep(1000);
 		}
-	} else {
-		while(a > pos){
+	} 
+	else 
+	{
+		while(a > pos)
+		{
 				ssp(ARM_A,a--);
 				ssp(ARM_B,2047-a);
 				a = get_servo_position(ARM_A);
