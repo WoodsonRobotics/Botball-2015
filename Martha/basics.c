@@ -1,6 +1,7 @@
 #include "martha.h"
 
-void setup() {	
+void setup() 
+{	
 	wait_for_light(lightPort);
 	beep();
 
@@ -8,7 +9,8 @@ void setup() {
 	printf("Hello! I'm going to find poms. \n");
 }
 
-void move(int speed, float seconds) {		
+void move(int speed, float seconds) 
+{		
 	mav(leftWheel, -1*speed);
 	mav(rightWheel, speed);
 	msleep(seconds * 1000);
@@ -16,13 +18,17 @@ void move(int speed, float seconds) {
 	mav(rightWheel, 0);
 }
 
-void scan() { // look through pile of poms to grab() the four we need
+void scan() 
+// look through pile of poms to grab() the four we need
+{ 
 	printf("Looking for the poms I want..\n");
 	
 	
 }
 
-void grab() { // once pom is positioned corrrectly, grab and put in bucket
+void grab() 
+// once pom is positioned corrrectly, grab and put in bucket
+{ 
 	printf("This one looks nice\n");
 	
 	set_servo_position(armPort, 1400); //arbitrary position for now
@@ -35,7 +41,9 @@ void grab() { // once pom is positioned corrrectly, grab and put in bucket
 	poms++;
 }
 
-void dump() { // to drop poms in startzone
+void dump() 
+// to drop poms in startzone
+{ 
 	printf("Goodbye poms.\n");
 	
 	set_servo_position(dumpPort, 1000);

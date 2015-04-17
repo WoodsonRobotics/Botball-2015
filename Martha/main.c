@@ -3,7 +3,9 @@
 #include "martha.h"
 
 int poms = 0;
-int main() {
+
+int main() 
+{
 	
 	setup();
 	
