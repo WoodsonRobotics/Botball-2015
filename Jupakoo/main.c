@@ -13,9 +13,9 @@ int main()
 	setup();
 	printf("Battery: %d\n",get_create_battery_capacity());
 	
-	turn(100,90);
+	turn(100,-75);
 	msleep(10);
-	move(100,100);
+
 
 	create_disconnect();
 	printf("Bai bai\n");
