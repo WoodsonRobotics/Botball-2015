@@ -14,11 +14,26 @@
 
 #define ssp(port,position) set_servo_position(port,position)
 
-//Speed is in mm/sec on interval [-500,500], distance is in mm, always positive;
+// Speed is in mm/sec on interval [-500,500], distance is in mm, always positive;
 void move(int speed, int distance);
 
-//Speed is in mm/s on interval (0,500]
-//Angle is positive angle is counterclockwise in degrees (not radians, or celsius, or fareignheight, or kelvin
+// Speed is in mm/s on interval (0,500]
+// Angle is positive, counterclockwise in degrees (not radians, or celsius, or fareignheight, or kelvin)
 void turn(int speed, int angle);
+
+// Move arm servo to the up position
+void armUp() 
+
+// Move arm servo to the middle position
+void armMiddle()
+
+// Move arm servo to the down position
+void armDown()
+
+// Open claw
+void clawOpen() 
+
+// Close claw
+void clawClose()
 
 #endif
