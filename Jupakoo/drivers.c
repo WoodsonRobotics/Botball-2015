@@ -11,6 +11,7 @@ void move(int speed, int distance)
 		{
 			printf("%d mm moved\n", get_create_distance());
 		}
+	}
 	else
 	{
 		while(get_create_distance() < distance)
