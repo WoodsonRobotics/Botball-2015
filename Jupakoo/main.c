@@ -6,7 +6,8 @@ void setup()
 	//wait_for_light(0); 
 	//shut_down_in(119); // shut off the motors and stop the Create after 119 seconds
 	enable_servos();
-	create_connect();	
+	create_connect();
+	// ugly hack to make get_servo_position work as it returns last set position
 	ssp(ARM_A, 0);
 	ssp(ARM_B, 2047);
 	printf("Battery: %d\n",get_create_battery_capacity());
