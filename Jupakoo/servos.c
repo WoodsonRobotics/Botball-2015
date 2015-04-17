@@ -4,6 +4,7 @@ void armUp()
 {
 	ssp(arm,UP);
 }
+
 void armMiddle()
 {
 	ssp(arm,MIDDLE);

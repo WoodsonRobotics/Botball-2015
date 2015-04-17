@@ -7,7 +7,6 @@ void setup()
 	//shut_down_in(119); // shut off the motors and stop the Create after 119 seconds
 	create_connect();
 	printf("Battery: %d\n",get_create_battery_capacity());
-	
 }
 
 void shutdown() 
