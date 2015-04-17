@@ -19,6 +19,27 @@ void shutdown()
 	printf("Bai bai\n");
 }
 
+void run () 
+{
+	// orient
+	turn(100,90);
+	// pick up cubes
+	armDown();
+	clawClose();
+	armMiddle();
+	// Move toward first poms
+	move(200,500);
+	turn(100,45);
+	// Move toward second poms
+	move(200,500);
+	turn(100,-45);
+	// Move toward end
+	move(200,200);
+	// Move back to top board
+	armUp();
+	turn(100,-180);
+	
+}
 int main()
 {
 	setup();
@@ -35,3 +56,4 @@ int main()
 	shutdown();
 	return 0;
 }
+
