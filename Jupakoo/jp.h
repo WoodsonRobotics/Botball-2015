@@ -10,6 +10,7 @@
 
 #define UP 0
 #define DOWN 0
+#define MIDDLE 0
 #define ssp(port,position) set_servo_position(port,position)
 
 void setup();
