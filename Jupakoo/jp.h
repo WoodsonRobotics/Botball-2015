@@ -22,18 +22,18 @@ void move(int speed, int distance);
 void turn(int speed, int angle);
 
 // Move arm servo to the up position
-void armUp() 
+void armUp();
 
 // Move arm servo to the middle position
-void armMiddle()
+void armMiddle();
 
 // Move arm servo to the down position
-void armDown()
+void armDown();
 
 // Open claw
-void clawOpen() 
+void clawOpen();
 
 // Close claw
-void clawClose()
+void clawClose();
 
 #endif
