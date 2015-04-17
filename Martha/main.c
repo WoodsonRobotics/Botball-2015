@@ -6,7 +6,6 @@ int poms = 0;
 
 int main() 
 {
-	
 	setup();
 	
 	msleep(10000); //wait for Jupakoo to push poms in place

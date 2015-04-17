@@ -2,6 +2,12 @@
 
 void setup() 
 {	
+	set_servo_position(armPort,armrest);
+	set_servo_position(clawPort,clawrest);
+	set_servo_position(dumpPort,dumprest);
+	set_servo_position(pivotPort,pivotrest);
+	enable_servos();
+	
 	wait_for_light(lightPort);
 	beep();
 
