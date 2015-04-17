@@ -7,6 +7,12 @@ void setup()
 	create_connect();
 }
 
+void shutdown() 
+{
+	create_disconnect();
+	printf("Bai bai\n");
+}
+
 int main()
 {
 	printf("Nooice\n");
@@ -17,7 +23,6 @@ int main()
 	msleep(10);
 
 
-	create_disconnect();
-	printf("Bai bai\n");
+	shutdown();
 	return 0;
 }
