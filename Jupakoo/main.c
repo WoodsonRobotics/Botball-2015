@@ -18,7 +18,6 @@ void shutdown()
 
 int main()
 {
-	
 	setup();
 	
 	turn(100,-75);

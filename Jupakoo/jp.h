@@ -13,8 +13,6 @@
 #define MIDDLE 0
 #define ssp(port,position) set_servo_position(port,position)
 
-void setup();
-
 //Speed is in mm/sec on interval [-500,500], distance is in mm;
 void move(int speed, int distance);
 
