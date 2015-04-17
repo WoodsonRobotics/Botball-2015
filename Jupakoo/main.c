@@ -25,7 +25,7 @@ void run ()
 	//turn(100,90);
 	// pick up cubes
 	armDown();
-	clawClose();
+	clawClose(); 
 	armMiddle();
 	// Move toward first poms
 	move(200,500);
@@ -43,7 +43,7 @@ void run ()
 	move(100,500);
 	*/
 }
-int main()
+int main() 
 {
 	setup();
 	
