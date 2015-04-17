@@ -2,7 +2,7 @@
 
 void setup()
 {
-	//wait_for_light(0); // change the port number to match where your robot 
+	//wait_for_light(0); 
 	//shut_down_in(119); // shut off the motors and stop the Create after 119 seconds
 	create_connect();
 }
