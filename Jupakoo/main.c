@@ -45,8 +45,8 @@ int main()
 	setup();
 	
 	
-	armUp();
-	msleep(5000);
+	//armUp();
+	msleep(3000);
 	armMiddle();
 	msleep(5000);
 	armUp();
