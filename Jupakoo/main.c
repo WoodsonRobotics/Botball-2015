@@ -23,6 +23,8 @@ int main()
 	//turn(100,180);
 	//move(100,100);
 	armUp();
+	msleep(20);
+	armDown();
 
 	shutdown();
 	return 0;

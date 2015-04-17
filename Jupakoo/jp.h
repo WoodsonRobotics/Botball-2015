@@ -12,8 +12,8 @@
 
 // Arm constants
 #define UP 0
-#define DOWN 0
-#define MIDDLE 0
+#define DOWN 2047
+#define MIDDLE 1200
 
 // Macro for servo position
 #define ssp(port,position) set_servo_position(port,position)
