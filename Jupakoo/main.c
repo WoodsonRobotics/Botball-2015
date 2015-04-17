@@ -22,13 +22,14 @@ void shutdown()
 void run () 
 {
 	// orient
-	turn(100,90);
+	//turn(100,90);
 	// pick up cubes
 	armDown();
 	clawClose();
 	armMiddle();
 	// Move toward first poms
 	move(200,500);
+	/*
 	turn(100,45);
 	// Move toward second poms
 	move(200,500);
@@ -37,8 +38,10 @@ void run ()
 	move(200,200);
 	// Move back to top board
 	armUp();
-	turn(100,-180);
-	
+	turn(100,-90);
+	clawOpen();
+	move(100,500);
+	*/
 }
 int main()
 {
