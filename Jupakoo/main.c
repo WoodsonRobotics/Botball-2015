@@ -20,8 +20,10 @@ int main()
 {
 	setup();
 	
-	turn(100,-75);
-	msleep(10);
+	//move(100,100);
+	//turn(100,180);
+	//move(100,100);
+	armUp();
 
 	shutdown();
 	return 0;

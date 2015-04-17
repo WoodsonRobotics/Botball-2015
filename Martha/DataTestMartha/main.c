@@ -30,67 +30,62 @@ int main() {
 	set_servo_position(clawPort,clawrest);
 	//set_servo_position(dumpPort,dumprest);
 	set_servo_position(armPort,armrest);
-
+	
 	enable_servos();
 	
 	//move_relative_position(leftWheel,500,1000L);
 	
 	printf("eetryjukyjhdgjmkujthgrs");
 	camera_open(LOW_RES);
-		
-		/*mav(rightWheel, 500);
-		mav(leftWheel, 500);
-		msleep(300);
-		mav(rightWheel, 0);
-		mav(leftWheel, 0);*/
 	
-		//while(1==1) {}
-		/*printf("%d: ", i);
-		if(get_object_count(greenVal) > get_object_count(redVal)) {
-				printf("%d: %d \n", i, isCenter(greenVal));
-		}
-		if(get_object_count(redVal) > get_object_count(greenVal)) {
-				printf("%d: %d \n", i, isCenter(redVal));
-		}
-		
-		i++;
-		msleep(400);*/
+	/*mav(rightWheel, 500);
+	mav(leftWheel, 500);
+	msleep(300);
+	mav(rightWheel, 0);
+	mav(leftWheel, 0);*/
+	
+	//while(1==1) {}
+	/*printf("%d: ", i);
+	if(get_object_count(greenVal) > get_object_count(redVal)) {
+	printf("%d: %d \n", i, isCenter(greenVal));
+	}
+	if(get_object_count(redVal) > get_object_count(greenVal)) {
+	printf("%d: %d \n", i, isCenter(redVal));
+	}
+	
+	i++;
+	msleep(400);*/
+	
+	/*	
+	if(a_button()) {
+	set_servo_position(clawPort, clawclose);
+	}
+	if(b_button()) {
+	set_servo_position(clawPort, clawrest);
+	}
+	if(c_button()) {
+	set_servo_position(clawPort, clawopen);
+	}
+	}
+	*/
+	int i = 0;
+	while(1==1) {
+		int a = 0;
+		if(a_button()) { //for general checking
+			camera_update();
 			
-		/*	
-			if(a_button()) {
-				set_servo_position(clawPort, clawclose);
-			}
-			if(b_button()) {
-				set_servo_position(clawPort, clawrest);
-			}
-			if(c_button()) {
-				set_servo_position(clawPort, clawopen);
-			}
-		}
-		*/
-		int i = 0;
-		while(1==1) {
-			int a = 0;
-			if(a_button()) { //for general checking
-				camera_update();
-				
-				if(get_object_count(greenVal) > 0) {
-					printf("%d: green pom at %d,%d \n", i, get_object_center(greenVal,a).x,get_object_center(greenVal,a).y);
+			if(get_object_count(greenVal) > 0) {
+				printf("%d: green pom at %d,%d \n", i, get_object_center(greenVal,a).x,get_object_center(greenVal,a).y);
 				} else if(get_object_count(redVal) > 0) {
-					printf("%d: red pom at %d,%d \n", i, get_object_center(redVal,a).x,get_object_center(redVal,a).y);
-				}			
-				i++;
-			}
-			if(b_button()) {
-				camera_update();
-				printf("First pom is at %d,%d", get_object_center(greenVal,0). x,get_object_center(greenVal,0).y);
-				printf("First pom is at %d,%d", get_object_center(greenVal,1). x,get_object_center(greenVal,1).y);
-			}
-	
+				printf("%d: red pom at %d,%d \n", i, get_object_center(redVal,a).x,get_object_center(redVal,a).y);
+			}			
+			i++;
 		}
-		
-		
-
-	
+		if(b_button()) {
+			camera_update();
+			printf("First pom is at %d,%d", get_object_center(greenVal,0). x,get_object_center(greenVal,0).y);
+			printf("First pom is at %d,%d", get_object_center(greenVal,1). x,get_object_center(greenVal,1).y);
+		}
+	}
 	return 0;
 }

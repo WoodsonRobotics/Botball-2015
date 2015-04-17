@@ -14,7 +14,7 @@
 
 #define ssp(port,position) set_servo_position(port,position)
 
-//Speed is in mm/sec on interval [-500,500], distance is in mm;
+//Speed is in mm/sec on interval [-500,500], distance is in mm, always positive;
 void move(int speed, int distance);
 
 //Speed is in mm/s on interval (0,500]
