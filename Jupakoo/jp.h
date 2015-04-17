@@ -10,7 +10,7 @@
 
 #define UP 0
 #define DOWN 0
-#define ssp(port,position) set_servo_positon(port,position)
+#define ssp(port,position) set_servo_position(port,position)
 void setup();
 
 //Speed is in mm/sec on interval [-500,500], distance is in mm;
