@@ -16,12 +16,12 @@
 #define greenVal 0
 #define redVal 1
 
-#define armrest 1405
-#define armdown 753
+#define armrest 1580
+#define armdown 807
 #define pivotrest 2048
 #define pivotback 300
-#define clawrest 1115
-#define clawclose 1380
+#define clawrest 550
+#define clawclose 730
 #define dumprest 800
 #define dumpup 1700
 
