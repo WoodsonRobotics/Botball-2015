@@ -5,7 +5,7 @@ void setArmPosition(int pos)
 	int a = get_servo_position(ARM_A);
 	int b = get_servo_position(ARM_B);
 	//ssp(ARM_A, a);
-	ssp(ARM_B, b);
+	//ssp(ARM_B, b);
 	
 	printf("Servos starting at a,b: %d, %d\n", a, b);
     if(a < pos){
