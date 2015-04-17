@@ -31,6 +31,7 @@
 extern int poms;
 void setup();
 void move(int speed, float seconds);
+int isCenter(int channel);
 void scan();
 void grab();
 void dump();

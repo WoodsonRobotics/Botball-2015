@@ -24,6 +24,20 @@ void move(int speed, float seconds)
 	mav(rightWheel, 0);
 }
 
+int isCenter(int channel) {
+	if(channel == greenVal) {
+		if((105 < get_object_center(greenVal,0).x < 111) && (57 < get_object_center(greenVal,0).y < 63)) 
+			return 1;
+	} 
+	if(channel == redVal) {
+		if((91 < get_object_center(greenVal,0).x < 97) && (68 < get_object_center(greenVal,0).y < 75)) 
+			return 1;
+	} 
+	else {
+		return 0;
+	}
+}
+
 void scan() 
 // look through pile of poms to grab() the four we need
 { 
