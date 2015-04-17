@@ -11,7 +11,7 @@ void setup();
 void move(int speed, int distance);
 
 //Speed is in mm/s on interval (0,500]
-//Angle is positive angle is counterclockwise
+//Angle is positive angle is counterclockwise in degrees (not radians, or celsius, or fareignheight, or kelvin
 void turn(int speed, int angle);
 
 
