@@ -3,28 +3,27 @@
 void setArmPosition(int pos)
 {
 	int a = get_servo_position(ARM_A);
-	int b = get_servo_position(ARM_B);
-	//ssp(ARM_A, a);
-	//ssp(ARM_B, b);
+	printf("Servos a,b: %d, %d\n", get_servo_position(ARM_A),get_servo_position(ARM_B));
 	
-	printf("Servos starting at a,b: %d, %d\n", a, b);
     if(a < pos){
+		printf("loop a+\n");
 		while(a < pos){
-			ssp(ARM_A,a++);
+			a+=1;
+			ssp(ARM_A,a);
 			ssp(ARM_B,2047-a);
-			a = get_servo_position(ARM_A);
-			b = get_servo_position(ARM_B);
-			printf("Servos a,b: %d, %d\n", a, b);
-			msleep(1000);
+			
+			printf("Servos a,b: %d, %d\n", get_servo_position(ARM_A),get_servo_position(ARM_B));
+			msleep(1); //speed controll
 		}
 	} else {
+		printf("loop a-\n");
 		while(a > pos){
-				ssp(ARM_A,a--);
+				a-=1;
+				ssp(ARM_A,a);
 				ssp(ARM_B,2047-a);
-				a = get_servo_position(ARM_A);
-			    b = get_servo_position(ARM_B);
-				printf("Servos a,b: %d, %d\n", a, b);
-				msleep(1000);
+
+				printf("Servos a,b: %d, %d\n", get_servo_position(ARM_A),get_servo_position(ARM_B));
+				msleep(1); // speed controll
 		}
 	}
 	ssp(ARM_A, pos);
@@ -36,6 +35,7 @@ void armUp()
 	setArmPosition(UP);
 	printf("DONE MOVING ARM UP\n");
 }
+
 void armMiddle()
 {
 	setArmPosition(MIDDLE);
