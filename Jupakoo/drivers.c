@@ -36,3 +36,23 @@ void turn(int speed, int angle)
 		create_stop();
 	}
 }
+
+void armUp() 
+{
+	ssp(arm,UP);
+}
+
+void armDown()
+{
+	ssp(arm,DOWN);
+}
+
+void clawOpen() 
+{
+	ssp(claw,OPEN);
+}
+
+void clawClose()
+{
+	ssp(claw,CLOSE);
+}
