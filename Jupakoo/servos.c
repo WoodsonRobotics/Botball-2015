@@ -55,10 +55,10 @@ void armDown()
 
 void clawOpen() 
 {
-	
+	ssp(CLAW,OPEN);
 }
 
 void clawClose()
 {
-	
+	ssp(CLAW,CLOSE);
 }
