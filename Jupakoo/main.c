@@ -32,7 +32,7 @@ void run ()
 	// pick up cubes 
 	
 	// Move toward first poms
-	move(200,500);
+	move(200,280);
 	/*
 	turn(100,45);
 	// Move toward second poms
