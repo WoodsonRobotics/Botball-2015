@@ -17,21 +17,21 @@
 #define greenVal 0
 #define redVal 1
 
-#define armrest 900
-#define armdown 1670
+#define armrest 350
+#define armdown 1140
 #define pivotrest 2047
-#define pivotback 160
+#define pivotback 215
 #define clawrest 1250
 #define clawclose 1400
 #define clawopen 1100
 #define dumprest 1000
 #define dumpup 1700
 
-#define LBOUND 60
+#define LBOUND 50
 #define RBOUND 90 
 
-#define RBHB 83
-#define RTHB 93
+#define RBHB 75
+#define RTHB 85
 #define	GBHB 5
 #define GTHB 20
 static int POMS = 0;

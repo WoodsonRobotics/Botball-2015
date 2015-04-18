@@ -11,6 +11,7 @@ void setup() {
 	enable_servos();
 	beep();
 	printf("Hello. \n");
+	shut_down_in(118);
 	//wait_for_light(lightPort); //find the port
 }
 
@@ -26,59 +27,48 @@ void stop() {
 }
 
 void align(int channel, int i) {
-	if(get_object_center(channel,i).x < LBOUND) {
-		while(get_object_center(channel,i).x < LBOUND){
-			camera_update();
-			move(100,0);
-			printf("COORD IS %d\n", get_object_center(channel,i).x);
-		}
+	printf("height: %d at %d \n",get_object_bbox(channel,i).height,get_object_center(channel,i).x);
+	camera_update();
+	if(get_object_count(channel) < 1) {
+		//scan();
+		move(-300,-300);
+		msleep(200);
 		stop();
 	}
-	else if(get_object_center(channel,i).x > RBOUND) {
-		while(get_object_center(channel,i).x > RBOUND) {
-			move(0,100);
-			camera_update();
-		}
-		stop();
+	camera_update();
+	while(get_object_center(channel,i).x < LBOUND){
+		camera_update();
+		move(0,-150);
+		//printf("COORD IS %d\n", get_object_center(channel,i).x);
+		printf("to the left \n");
 	}
-	
-	if(channel == redVal) {
-		if(get_object_bbox(channel,i).height < RBHB){
-			while(get_object_bbox(channel,i).height < RBHB) {
-				camera_update();
-				move(100,100);
-			}
-			stop();
-		}
-		else if(get_object_bbox(channel,i).height > RTHB) {
-			while(get_object_bbox(channel,i).height > RTHB) {
-				camera_update();
-				move(-100,-100);
-			}
-			stop();
-		}
+	stop();
+	camera_update();
+	while(get_object_center(channel,i).x > RBOUND) {
+		camera_update();
+		move(-150,0);
+		printf("to the right \n");
 	}
-	else if(channel == greenVal) {
-		if(get_object_bbox(channel,i).height < GBHB){
-			while(get_object_bbox(channel,i).height < GBHB) {
-				camera_update();
-				move(-100,-100);
-			}
-			stop();
-		}
-		else if(get_object_bbox(channel,i).height > GTHB) {
-			while(get_object_bbox(channel,i).height > GTHB) {
-				camera_update();
-				move(100,100);
-			}
-			stop();
-		}
+	stop();
+	camera_update();
+	while(get_object_bbox(channel,i).height < RBHB) {
+		camera_update();
+		move(100,100);
 	}
+	stop();
+	camera_update();
+	while(get_object_bbox(channel,i).height > RTHB) {				
+		camera_update();
+		move(-200,-200);
+	}
+	stop();
+
+}
 	
 	//check x value of the object
 	//move to align x value (either move claw if close by, or turn and move towards it)
 	//find area of object and move forward/back in order to align claw
-}
+
 
 int isCenter(int channel, int i) {
 	if(LBOUND < get_object_center(channel,i).x < RBOUND) {
@@ -91,15 +81,37 @@ int isCenter(int channel, int i) {
 
 void agitate() {
 	set_servo_position(clawPort,clawclose);
+	msleep(800);
 	set_servo_position(armPort,armdown);
-	set_servo_position(pivotPort,pivotrest-20); //?
-	set_servo_position(pivotPort,pivotrest+20); //?
+	msleep(800);
+	set_servo_position(pivotPort,pivotrest-5); //?
+	msleep(800);
+	set_servo_position(pivotPort,pivotrest+5); //?
+	msleep(800);
 	set_servo_position(pivotPort,pivotrest); //?
+	msleep(800);
 	set_servo_position(armPort,armrest);
+	msleep(800);
 	set_servo_position(clawPort,clawrest);
+	msleep(800);
 }
 void scan() {
 	// Move Martha around to look for poms lined up
+	int i = 0;
+	while(get_object_count(redVal) == 0) {
+		printf("looking for red.... \n");
+		move(-100,100);
+		msleep(200);
+		i++;
+		camera_update();
+		if(i > 13) {
+			printf("nope.. \n");
+			break;
+		}
+	}
+	printf("found one \n");
+	stop();
+	
 }
 
 void grab() {
@@ -111,6 +123,7 @@ void grab() {
 	set_servo_position(clawPort,clawclose);
 	msleep(400);
 	set_servo_position(armPort,armrest);
+	msleep(1000);
 	set_servo_position(pivotPort,pivotback);
 	msleep(1000);
 	set_servo_position(clawPort,clawopen);
