@@ -41,6 +41,7 @@ void run ()
 	// Move toward end
 	move(200,510);
 	// Move back to top board
+	move(200,510);
 	armUp();
 	turn(100,-90);
 	clawOpen();
