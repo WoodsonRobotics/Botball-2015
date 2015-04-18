@@ -39,7 +39,7 @@ void run ()
 	move(200,763);
 	turn(100,-45);
 	// Move toward end
-	move(200,200);
+	move(200,510);
 	// Move back to top board
 	armUp();
 	turn(100,-90);
