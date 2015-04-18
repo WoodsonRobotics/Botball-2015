@@ -22,12 +22,15 @@ void shutdown()
 
 void run () 
 {
-	// orient
-	//turn(100,90);
-	// pick up cubes
+	msleep(1);
+	// Pick up cubes
 	armDown();
 	clawClose(); 
 	armMiddle();
+	// orient
+	//turn(100,45);
+	// pick up cubes 
+	
 	// Move toward first poms
 	move(200,500);
 	/*
@@ -48,15 +51,16 @@ int main()
 {
 	setup();
 	
-	
-	//armUp();
+	//run();
+	//move(100,100); 
+	/*
 	msleep(3000);
 	armMiddle();
 	msleep(5000);
 	armUp();
 	msleep(5000);
 	armDown();
-	
+	*/
 	shutdown();
 	return 0;
 }
