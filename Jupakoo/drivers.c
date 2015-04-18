@@ -4,8 +4,8 @@ void move(int speed, int distance)
 {
 	set_create_distance(0);
 	create_drive_straight(-1*speed);
-	
-	if(distance > 0)
+
+	if(speed > 0)
 	{
 		while(-1*get_create_distance() < distance)
 		{
@@ -47,28 +47,4 @@ void turn(int speed, int angle)
 		}
 		create_stop();
 	}
-}
-
-void armUp() 
-{
-	ssp(arm,UP);
-}
-void armMiddle()
-{
-	ssp(arm,MIDDLE);
-}
-
-void armDown()
-{
-	ssp(arm,DOWN);
-}
-
-void clawOpen() 
-{
-	ssp(claw,OPEN);
-}
-
-void clawClose()
-{
-	ssp(claw,CLOSE);
 }
