@@ -74,12 +74,46 @@ int main() {
 		if(a_button()) { //for general checking
 			camera_update();
 			
+<<<<<<< HEAD
+		/*	
+			if(a_button()) {
+				set_servo_position(clawPort, clawclose);
+			}
+			if(b_button()) {
+				set_servo_position(clawPort, clawrest);
+			}
+			if(c_button()) {
+				set_servo_position(clawPort, clawopen);
+			}
+		}
+		*/
+		int i = 0;
+		while(1==1) {
+			int a = 0;
+			if(a_button()) { //for general checking
+				camera_update();
+				
+				if(get_object_count(greenVal) > 0) {
+					printf("\n%d: green pom at %d,%d \n", i, get_object_center(greenVal,a).x,get_object_center(greenVal,a).y);
+				} else if(get_object_count(redVal) > 0) {
+					printf("\n%d: red pom at %d,%d \n", i, get_object_center(redVal,a).x,get_object_center(redVal,a).y);
+				}			
+				i++;
+			}
+			if(b_button()) {
+				camera_update();
+				printf("\n First pom is at %d,%d\n", get_object_center(greenVal,0).x, get_object_center(greenVal,0).y);
+				printf("\n Second pom is at %d,%dc\n", get_object_center(greenVal,1).x, get_object_center(greenVal,1).y);
+			}
+	
+=======
 			if(get_object_count(greenVal) > 0) {
 				printf("%d: green pom at %d,%d \n", i, get_object_center(greenVal,a).x,get_object_center(greenVal,a).y);
 				} else if(get_object_count(redVal) > 0) {
 				printf("%d: red pom at %d,%d \n", i, get_object_center(redVal,a).x,get_object_center(redVal,a).y);
 			}			
 			i++;
+>>>>>>> origin/master
 		}
 		if(b_button()) {
 			camera_update();
