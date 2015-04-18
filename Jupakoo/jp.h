@@ -2,6 +2,8 @@
 #ifndef _JP_H_
 #define _JP_H_
 
+#define POLL_TIME 1
+
 // Servos
 #define CLAW 1
 
@@ -9,13 +11,13 @@
 #define ARM_B 2
 
 // Claw constants
-#define OPEN 600
-#define CLOSE 1400
+#define OPEN 100
+#define CLOSE 2040
 
 // Arm constants  All Arm constatns are (0,2047) <- non-inclusive!!!!!!
 #define UP 1 
-#define MIDDLE 500
-#define DOWN 1200
+#define MIDDLE 1400
+#define DOWN 2046
 
 // Macro for servo position
 #define ssp(port,position) set_servo_position(port,position)
@@ -31,6 +33,10 @@ void setArmPosition(int position);
 
 void armUp();
 void armDown();
+
+void clawOpen();
+
+void clawClose();
 
 
 #endif
