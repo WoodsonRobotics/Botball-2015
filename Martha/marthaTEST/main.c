@@ -15,12 +15,12 @@
 #define redVal 1
 
 #define armrest 1580
-#define armdown 807
+#define armdown 745
 #define pivotrest 2046
-#define pivotback 300
-#define clawrest 550
-#define clawclose 730
-#define clawopen 400
+#define pivotback 320
+#define clawrest 1150
+#define clawclose 1165
+#define clawopen 1000
 #define dumprest 1000
 #define dumpup 1700
 
@@ -29,16 +29,36 @@
 #define Rcx 95
 #define Rcy 71
 
-//  105-111 57-63 is where a green pom can be grabbed.
-//  91-97  68-75 is where a red pom can be grabbed.
-// ..I don't know why..
+//opiuyfutyoihugkyftygihojiu
 
 int isCenter(int channel);
 
 int main() {
 
+	//set_servo_position(clawPort,clawrest);
+	//set_servo_position(armPort,armrest);
+	//set_servo_position(pivotPort,pivotrest);
+	//set_servo_position(clawPort,clawrest);
+	enable_servos();
+	
+	camera_open(LOW_RES);
+	camer_update();
+	
 	int minority;
-
+	
+	if(get_object_count(greenVal) > get_object_count(redVal)) {
+		minority = greenVal; //doesn't make sense now but go with it for testing
+	}
+	
+	while(!isCenter(minority)) {
+		camera_update();
+		msleep(300);
+	}
+	
+	printf("found it? \n");
+	
+	
+/*
 	while((get_object_count(greenVal) || get_object_count(redVal)) > 0) {
 		mav(leftWheel,500);
 		mav(rightWheel,500);
@@ -64,14 +84,9 @@ int main() {
 	}
 
 	int offsetX,offsetY;
-	
+*/
 
 
-
-
-
-
-	
 	
 	
 return 0;	
@@ -84,11 +99,11 @@ return 0;
 // ..I don't know why..
 int isCenter(int channel) {
 	if(channel == greenVal) {
-		if((105 < get_object_center(greenVal,0).x < 111) && (57 < get_object_center(greenVal,0).y < 63)) 
+		if((50 < get_object_center(greenVal,0).x < 56) && (40 < get_object_center(greenVal,0).y < 46)) 
 			return 1;
 	} 
 	if(channel == redVal) {
-		if((91 < get_object_center(greenVal,0).x < 97) && (68 < get_object_center(greenVal,0).y < 75)) 
+		if((50 < get_object_center(greenVal,0).x < 56) && (73 < get_object_center(greenVal,0).y < 76)) 
 			return 1;
 	} 
 	else {
