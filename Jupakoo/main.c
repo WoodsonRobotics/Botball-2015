@@ -36,7 +36,7 @@ void run ()
 	/*
 	turn(100,45);
 	// Move toward second poms
-	move(200,500);
+	move(200,763);
 	turn(100,-45);
 	// Move toward end
 	move(200,200);
